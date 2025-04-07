@@ -2,73 +2,109 @@
     --primary-color: #2E0D56;
     --text-color: #333;
     --white: #ffffff;
+    --hover-color: #0066cc;
 }
 
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     color: var(--text-color);
     background-color: var(--white);
+    position: relative;
 }
 
-.nav-header {
+header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 1rem 4rem;
-    background-color: var(--white);
+    gap: 15px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    flex-shrink: 0;
 }
 
-.logo img {
-    height: 50px;
+.logo-text {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: black;
+    font-weight: normal;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+nav {
+    margin: 0;
 }
 
 nav ul {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--hover-color);
 }
 
 .hero-section {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 4rem;
+    align-items: flex-start;
+    padding: 2rem;
     min-height: 80vh;
+    position: relative;
 }
 
 .hero-content {
     flex: 1;
     max-width: 600px;
-}
-
-h1 {
-    font-size: 3rem;
-    margin-bottom: 0;
+    padding-right: 450px; /* Espacio para la imagen fija */
+    position: relative;
+    z-index: 1;
 }
 
 .name-title h2 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin: 0.5rem 0;
     line-height: 1.2;
 }
 
 .name-title h3 {
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 1rem 0;
 }
 
@@ -103,10 +139,11 @@ h1 {
 }
 
 .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    right: 2rem;
+    top: 50vh; /* Centro vertical de la ventana */
+    transform: translateY(-50%); /* Ajusta el centro de la imagen al centro de la ventana */
+    z-index: 0;
 }
 
 .profile-circle {
