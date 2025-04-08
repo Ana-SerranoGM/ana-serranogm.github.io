@@ -1,0 +1,101 @@
+/* Estilos para la sección de los móviles */
+.mobile-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.mobile-device {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media screen and (max-width: 1200px) {
+    .mobile-showcase {
+        flex-wrap: wrap;
+    }
+    
+    .mobile-device {
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-device {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mobile-showcase {
+        flex-direction: column;
+    }
+    
+    .mobile-device {
+        max-width: 80%;
+        margin: 10px 0;
+    }
+}
+
+.get-more-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.get-more-images img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 1200px) {
+    .get-more-images {
+        flex-wrap: wrap;
+    }
+    
+    .get-more-images img {
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .get-more-images img {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .get-more-images {
+        flex-direction: column;
+    }
+    
+    .get-more-images img {
+        max-width: 80%;
+        margin: 10px 0;
+    }
+}
+
+.get-more-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+.get-more-text {
+    flex: 1;
+    max-width: 50%;
+} 

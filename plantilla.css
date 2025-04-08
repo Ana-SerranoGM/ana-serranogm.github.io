@@ -1,0 +1,67 @@
+/* Estilos para la sección de plantilla */
+.plantilla-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.plantilla-content {
+    margin-top: 2rem;
+}
+
+.plantilla-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.plantilla-container {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.get-more-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.get-more-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.get-more-images {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.get-more-images img {
+    max-height: 600px;
+    width: auto;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+    .get-more-content {
+        flex-direction: column;
+    }
+
+    .get-more-text {
+        max-width: 100%;
+    }
+
+    .get-more-images {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .get-more-images img {
+        max-height: 400px;
+    }
+} 
