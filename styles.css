@@ -19,6 +19,10 @@ body {
 }
 
 header {
+    position: fixed;
+
+    background-color: var(--white);
+    z-index: 9999;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -48,7 +52,7 @@ header {
 }
 
 .header-right {
-    position: fixed;
+    
     right: 2rem;
     top: calc(50vh - 250px);
     transform: translateY(-50%);
