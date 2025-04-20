@@ -21,7 +21,7 @@ body {
 header {
     position: fixed;
 
-    background-color: var(--white);
+    background-color: #ffffff00;
     z-index: 9999;
     display: flex;
     justify-content: space-between;
