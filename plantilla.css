@@ -64,4 +64,25 @@
     .get-more-images img {
         max-height: 400px;
     }
+}
+
+.plantilla-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.plantilla-list li {
+    margin-bottom: 1.5rem;
+}
+
+.plantilla-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.plantilla-list a:hover {
+    color: var(--hover-color);
 } 

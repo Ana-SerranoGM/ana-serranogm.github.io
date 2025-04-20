@@ -32,8 +32,26 @@
         <div class="plantilla-content">
             <h2>Mi Plantilla Web</h2>
             <div class="plantilla-container">
-                <iframe src="plantilla/PaginaWeb/index.html" style="width: 100%; height: 1200px; border: none;"></iframe>
+                <ul class="plantilla-list">
+                    <li>
+                        <a href="plantilla/KikoPalomares/index.html" onclick="cargarIframe(this.href); return false;">Kiko Palomares</a>
+                    </li>
+                    <li>
+                        <a href="plantilla/RatherApp/index.html" onclick="cargarIframe(this.href); return false;">Rather App</a>
+                    </li>
+                    <li>
+                        <a href="plantilla/Violeta/index.html" onclick="cargarIframe(this.href); return false;">Violeta</a>
+                    </li>
+                </ul>
+                <div id="contenido-iframe"></div>
             </div>
+
+            <script>
+                function cargarIframe(url) {
+                    const contenedor = document.getElementById('contenido-iframe');
+                    contenedor.innerHTML = `<iframe src="${url}" style="width: 100%; height: 1200px; border: none;"></iframe>`;
+                }
+            </script>
         </div>
     </main>
 </body>
