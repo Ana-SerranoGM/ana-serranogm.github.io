@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lentes de sol Levon - SEEN THE LABEL</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <style>
+        .product-detail {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .product-gallery {
+            position: relative;
+        }
+
+        .gallery-main {
+            width: 100%;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+        }
+
+        .gallery-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 100px;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .thumbnail.active {
+            border-color: #000;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .price-container {
+            margin-bottom: 20px;
+        }
+
+        .current-price {
+            font-size: 20px;
+            color: #000;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 10px;
+        }
+
+        .offer-tag {
+            display: inline-block;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .size-selector {
+            margin-bottom: 20px;
+        }
+
+        .size-title {
+            margin-bottom: 10px;
+        }
+
+        .size-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .size-button {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .size-button:hover, .size-button.selected {
+            border-color: #000;
+        }
+
+        .quantity-selector {
+            margin-bottom: 20px;
+        }
+
+        .quantity-input {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .add-to-cart {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #000;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .add-to-cart:hover {
+            background: #333;
+        }
+
+        .size-guide {
+            margin-bottom: 30px;
+        }
+
+        .size-guide h3 {
+            margin-bottom: 15px;
+        }
+
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .size-table th, .size-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .related-products {
+            margin-top: 60px;
+        }
+
+        .related-products h2 {
+            margin-bottom: 30px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="nav-container">
+        <div class="nav-left">
+            <a href="../index.html">Tienda</a>
+            <a href="../about.html">Acerca de</a>
+            <a href="../contacto.html">Contacto</a>
+        </div>
+        <div class="nav-center">
+            <a href="../index.html" class="logo">SEEN THE LABEL</a>
+        </div>
+        <div class="nav-right">
+            <a href="../login.html">Iniciar sesión</a>
+            <a href="../registro.html">Registrarse</a>
+            <a href="../carrito.html" class="cart-icon">
+                🛒
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Detalles del producto -->
+    <div class="product-detail">
+        <div class="product-gallery">
+            <div class="gallery-main">
+                <img src="../img/Levon-Sunglasses_1.jpg" alt="Lentes de sol Levon">
+            </div>
+            <div class="gallery-thumbnails">
+                <div class="thumbnail active">
+                    <img src="../img/Levon-Sunglasses_1.jpg" alt="Lentes de sol Levon frontal">
+                </div>
+                <div class="thumbnail">
+                    <img src="../img/Levon-Sunglasses_2.jpg" alt="Lentes de sol Levon lateral">
+                </div>
+                <div class="thumbnail">
+                    <img src="../img/Levon-Sunglasses_3.jpg" alt="Lentes de sol Levon trasera">
+                </div>
+                <div class="thumbnail">
+                    <img src="../img/Levon-Sunglasses_4.jpg" alt="Lentes de sol Levon detalle">
+                </div>
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1 class="product-title">Lentes de sol Levon</h1>
+            <div class="price-container">
+                <span class="current-price">79,00 €</span>
+            </div>
+            <p class="product-description">
+                Los Lentes de sol Levon combinan estilo y protección solar de alta calidad. 
+                Con un diseño moderno y atemporal, estas gafas ofrecen una protección UV 400 
+                completa. Su montura ligera y resistente, junto con sus lentes polarizadas, 
+                las hacen ideales para cualquier ocasión. Un accesorio imprescindible para 
+                quienes buscan elegancia y funcionalidad en sus gafas de sol.
+            </p>
+            
+            <div class="size-selector">
+                <h3 class="size-title">Selecciona Tamaño</h3>
+                <div class="size-buttons">
+                    <button class="size-button" data-size="Única">Única</button>
+                </div>
+            </div>
+
+            <div class="quantity-selector">
+                <label for="quantity">Cantidad:</label>
+                <input type="number" id="quantity" class="quantity-input" min="1" value="1">
+            </div>
+
+            <button class="add-to-cart">Añadir al carrito</button>
+
+            <div class="size-guide">
+                <h3>Guía de tallas</h3>
+                <table class="size-table">
+                    <tr>
+                        <th>Talla</th>
+                        <th>Ancho de lente (mm)</th>
+                        <th>Puente (mm)</th>
+                        <th>Patillas (mm)</th>
+                    </tr>
+                    <tr>
+                        <td>Única</td>
+                        <td>55</td>
+                        <td>18</td>
+                        <td>145</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Productos relacionados -->
+    <section class="related-products">
+        <h2>Productos relacionados</h2>
+        <div class="related-grid">
+            <article class="product">
+                <a href="billetera-christophe.html" class="product-link">
+                    <div class="product-image">
+                        <img src="../img/Christophe-Wallet_1.jpg" alt="Billetera Christophe" class="image-main">
+                        <img src="../img/Christophe-Wallet_2.jpg" alt="Billetera Christophe vista alternativa" class="image-hover">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-title">Billetera Christophe</h2>
+                        <div class="price-container">
+                            <span class="current-price">59,00 €</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="product">
+                <a href="bolso-ryan.html" class="product-link">
+                    <div class="product-image">
+                        <img src="../img/Ryan-Bag_1.jpg" alt="Bolso Ryan" class="image-main">
+                        <img src="../img/Ryan-Bag_2.jpg" alt="Bolso Ryan vista alternativa" class="image-hover">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-title">Bolso Ryan</h2>
+                        <div class="price-container">
+                            <span class="current-price">89,00 €</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-links">
+                    <a href="/envio-devoluciones">Envío y devoluciones</a>
+                    <a href="/guia-tallas">Guía de tallas</a>
+                    <a href="/faq">Preguntas frecuentes</a>
+                    <a href="../about.html">Acerca de</a>
+                    <a href="../contacto.html">Contacto</a>
+                    <a href="/privacidad">Política de Privacidad</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://instagram.com/seenthelabel" target="_blank">Instagram</a>
+                    <a href="https://twitter.com/seenthelabel" target="_blank">Twitter</a>
+                    <a href="https://youtube.com/seenthelabel" target="_blank">Youtube</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="newsletter">
+                    <h3>Regístrate para recibir noticias y actualizaciones.</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Address">
+                        <button type="submit">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                SEEN THE LABEL 2024
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Galería de imágenes
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.querySelector('.gallery-main img');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                // Remover clase active de todas las miniaturas
+                thumbnails.forEach(t => t.classList.remove('active'));
+                // Añadir clase active a la miniatura clickeada
+                thumbnail.classList.add('active');
+                // Cambiar la imagen principal
+                mainImage.src = thumbnail.querySelector('img').src;
+                mainImage.alt = thumbnail.querySelector('img').alt;
+            });
+        });
+
+        // Selector de tallas
+        const sizeButtons = document.querySelectorAll('.size-button');
+        sizeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                sizeButtons.forEach(b => b.classList.remove('selected'));
+                button.classList.add('selected');
+            });
+        });
+
+        // Contador del carrito
+        const addToCartButton = document.querySelector('.add-to-cart');
+        const cartCount = document.querySelector('.cart-count');
+        let count = 0;
+
+        addToCartButton.addEventListener('click', () => {
+            const selectedSize = document.querySelector('.size-button.selected');
+            if (!selectedSize) {
+                alert('Por favor, selecciona una talla');
+                return;
+            }
+            count++;
+            cartCount.textContent = count;
+        });
+    </script>
+</body>
+</html> 

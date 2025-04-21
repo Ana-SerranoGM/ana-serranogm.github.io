@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - SEEN THE LABEL</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carrito.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="nav-container">
+        <div class="nav-left">
+            <a href="index.html">Tienda</a>
+            <a href="about.html">Acerca de</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <div class="nav-center">
+            <a href="index.html" class="logo">SEEN THE LABEL</a>
+        </div>
+        <div class="nav-right">
+            <a href="login.html">Iniciar sesión</a>
+            <a href="registro.html">Registrarse</a>
+            <a href="carrito.html" class="cart-icon">
+                🛒
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="cart-container">
+        <h1 class="cart-title">Tu Carrito</h1>
+        
+        <div class="cart-content">
+            <div class="cart-items">
+                <!-- Ejemplo de producto en el carrito -->
+                <div class="cart-item">
+                    <div class="item-image">
+                        <img src="img/Riley-Sneaker_1.jpg" alt="Calzado Deportivo Grant">
+                    </div>
+                    <div class="item-details">
+                        <h3 class="item-title">Calzado Deportivo Grant</h3>
+                        <p class="item-price">89,99 €</p>
+                        <div class="item-quantity">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+                        <button class="remove-btn">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Resumen del pedido</h2>
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>89,99 €</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Envío</span>
+                        <span>Gratis</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span>89,99 €</span>
+                    </div>
+                </div>
+                <button class="checkout-btn">Proceder al pago</button>
+                <a href="index.html" class="continue-shopping">Continuar comprando</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-links">
+                    <a href="envio-devoluciones.html">Envío y devoluciones</a>
+                    <a href="guia-tallas.html">Guía de tallas</a>
+                    <a href="faq.html">Preguntas frecuentes</a>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">Acerca de</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="privacidad.html">Política de Privacidad</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://instagram.com/seenthelabel" target="_blank">Instagram</a>
+                    <a href="https://twitter.com/seenthelabel" target="_blank">Twitter</a>
+                    <a href="https://youtube.com/seenthelabel" target="_blank">Youtube</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                SEEN THE LABEL 2024
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad del carrito
+        const removeButtons = document.querySelectorAll('.remove-btn');
+        const quantityInputs = document.querySelectorAll('.quantity-input');
+        const quantityButtons = document.querySelectorAll('.quantity-btn');
+        const checkoutButton = document.querySelector('.checkout-btn');
+
+        // Eliminar productos
+        removeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const item = this.closest('.cart-item');
+                item.remove();
+                updateCartCount();
+                updateTotal();
+            });
+        });
+
+        // Ajustar cantidades
+        quantityButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.parentElement.querySelector('.quantity-input');
+                const isPlus = this.classList.contains('plus');
+                let value = parseInt(input.value);
+                
+                if (isPlus) {
+                    value++;
+                } else {
+                    value = Math.max(1, value - 1);
+                }
+                
+                input.value = value;
+                updateTotal();
+            });
+        });
+
+        // Validar input de cantidad
+        quantityInputs.forEach(input => {
+            input.addEventListener('change', function() {
+                let value = parseInt(this.value);
+                if (isNaN(value) || value < 1) {
+                    this.value = 1;
+                }
+                updateTotal();
+            });
+        });
+
+        // Actualizar contador del carrito
+        function updateCartCount() {
+            const items = document.querySelectorAll('.cart-item');
+            const cartCount = document.querySelector('.cart-count');
+            cartCount.textContent = items.length;
+        }
+
+        // Actualizar total
+        function updateTotal() {
+            let subtotal = 0;
+            const items = document.querySelectorAll('.cart-item');
+            
+            items.forEach(item => {
+                const price = parseFloat(item.querySelector('.item-price').textContent.replace('€', '').trim());
+                const quantity = parseInt(item.querySelector('.quantity-input').value);
+                subtotal += price * quantity;
+            });
+
+            const subtotalElement = document.querySelector('.summary-row:not(.total) span:last-child');
+            const totalElement = document.querySelector('.summary-row.total span:last-child');
+            
+            subtotalElement.textContent = subtotal.toFixed(2) + ' €';
+            totalElement.textContent = subtotal.toFixed(2) + ' €';
+        }
+
+        // Procesar pago
+        checkoutButton.addEventListener('click', function() {
+            const items = document.querySelectorAll('.cart-item');
+            if (items.length === 0) {
+                alert('Tu carrito está vacío');
+                return;
+            }
+            alert('Procediendo al pago...');
+        });
+    </script>
+</body>
+</html> 
