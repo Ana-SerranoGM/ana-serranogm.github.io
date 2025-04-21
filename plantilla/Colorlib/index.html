@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Personal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="#">Mi Portafolio</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#portfolio">Portafolio</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Principal -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hola, soy Charles Anderson</h1>
+            <p>Desarrollador Web & Diseñador</p>
+            <a href="#contact" class="btn">Contáctame</a>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="Img/CharlesAnderson.jpg.webp" alt="Mi Foto">
+                    <a href="CV/CV_Ana_Maria_Serrano_Pedrajas_IT.pdf" download class="btn btn-cv">
+                        <i class="fas fa-download"></i> Descargar CV
+                    </a>
+                </div>
+                <div class="about-text">
+                    <p>¡Hola! Soy un apasionado desarrollador web con experiencia en crear sitios web modernos y funcionales. Me especializo en el desarrollo frontend y backend, creando experiencias digitales que impactan positivamente a los usuarios.</p>
+                    <div class="skills">
+                        <h3>Mis Habilidades</h3>
+                        <div class="skill-bars">
+                            <div class="skill">
+                                <span>HTML/CSS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <span>JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <span>React</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Mis Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Desarrollo Web</h3>
+                    <p>Creación de sitios web modernos y responsivos utilizando las últimas tecnologías y mejores prácticas.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Diseño UI/UX</h3>
+                    <p>Diseño de interfaces de usuario intuitivas y atractivas que mejoran la experiencia del usuario.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Desarrollo Móvil</h3>
+                    <p>Desarrollo de aplicaciones móviles nativas e híbridas para iOS y Android.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Portafolio -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Mi Portafolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <a href="portafolio/Proyecto1/index.html" target="_blank">
+                        <img src="Img/icon.jpeg" alt="Proyecto 1">
+                        <div class="portfolio-overlay">
+                            <h3>Proyecto 1</h3>
+                            <span class="view-project">Ver Proyecto</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="portafolio/Proyecto2/index.html" target="_blank">
+                        <img src="Img/icon.png" alt="Proyecto 2">
+                        <div class="portfolio-overlay">
+                            <h3>Proyecto 2</h3>
+                            <span class="view-project">Ver Proyecto</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio-item">
+                    <a href="portafolio/Proyecto3/index.html" target="_blank">
+                        <img src="Img/logo.png" alt="Proyecto 3">
+                        <div class="portfolio-overlay">
+                            <h3>Proyecto 3</h3>
+                            <span class="view-project">Ver Proyecto</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-form-section">
+                    <h2>Ponte en Contacto</h2>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Tu Nombre" required>
+                        <input type="email" placeholder="Tu Email" required>
+                        <input type="tel" placeholder="Tu Teléfono" required>
+                        <textarea placeholder="Escribe un Mensaje" required></textarea>
+                        <button type="submit" class="btn">Enviar</button>
+                    </form>
+                </div>
+                <div class="contact-details">
+                    <h2>Mis Datos de Contacto</h2>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <h3>EMAIL</h3>
+                            <p>charlesanderson@gmail.com</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>TELÉFONO</h3>
+                            <p>+34 123 456 789</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>FAX</h3>
+                            <p>+34 123 456 788</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>DIRECCIÓN</h3>
+                            <p>Madrid, España</p>
+                            <p>4ª Planta</p>
+                            <p>Calle Principal, 28001</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2025 Mi Portafolio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
